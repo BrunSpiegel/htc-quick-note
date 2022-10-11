@@ -1,11 +1,11 @@
-import { AddNote } from "./components/AddNote";
+// import { AddNote } from "./components/AddNote";
 import { Home } from "./pages/Home";
 
 function App() {
 
   return (
     <div>
-      <AddNote/>
+      <Home/>
     </div>
   );
 }
