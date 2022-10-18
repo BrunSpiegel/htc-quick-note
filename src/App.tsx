@@ -1,12 +1,16 @@
-// import { AddNote } from "./components/AddNote";
+import { ThemeProvider } from "styled-components";
 import { Home } from "./pages/Home";
+import { GlobalStyle } from "./styles/GlobalStyles";
+import { globalTheme } from "./styles/globalTheme";
+
 
 function App() {
 
   return (
-    <div>
+    <ThemeProvider theme={globalTheme}>
       <Home/>
-    </div>
+      <GlobalStyle/>
+    </ThemeProvider>
   );
 }
 
