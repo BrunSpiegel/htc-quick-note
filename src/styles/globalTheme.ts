@@ -7,12 +7,12 @@ export const globalTheme = {
     secundary500: "#FFCC18",
     grey100: "#F5F5F5",
     grey300: "#C4C4C4",
-    grey500: "#727273",
-    grey800: "#999999",
+    grey500: "#999999",
+    grey800: "#727273",
   },
   fonts: {
     main: "Barlow, sans-serif"
   },
-};
+} as const;
 
 export type GlobalTheme = typeof globalTheme 

@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;  
     font-size: 1rem;
+    color: ${({theme}) => theme.colors.grey800};
   }
 
   body {
@@ -26,10 +27,12 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
     border: none;
+    background-color: transparent;
   }
 
   input, textarea {
-     outline: transparent;
+    color: inherit;
+    outline: transparent;
   }
 
   textarea {
