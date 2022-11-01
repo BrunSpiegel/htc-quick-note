@@ -7,7 +7,7 @@ import StrikeIcon from "../../../assets/icons/ic_text-strikethrough.svg";
 import BulletlistIcon from "../../../assets/icons/ic_list-bulleted.svg";
 import UnderlineIcon from "../../../assets/icons/ic_text-underline.svg";
 import ImageIcon from "../../../assets/icons/ic_image.svg";
-import { Container, OptionButton } from "./styles";
+import { OptionsBarContainer, OptionButton } from "./styles";
 
 interface OptionsBarProps {
   editor: Editor;
@@ -24,7 +24,7 @@ export function OptionsBar({ editor, children, onFileAddition }: OptionsBarProps
   }
 
   return (
-    <Container>
+    <OptionsBarContainer>
       <OptionButton
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
@@ -82,6 +82,6 @@ export function OptionsBar({ editor, children, onFileAddition }: OptionsBarProps
         <input type="file" id="image" accept="image/*" onChange={handleImageInputChange}/>
       </OptionButton>
       <div>{children}</div>
-    </Container>
+    </OptionsBarContainer>
   );
 }

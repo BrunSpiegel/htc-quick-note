@@ -1,5 +1,5 @@
 import { Editor, EditorContent } from "@tiptap/react";
-import { Container } from "./styles";
+import { TextEditorContainer } from "./styles";
 
 interface TextEditorProps {
   editor: Editor 
@@ -8,8 +8,8 @@ interface TextEditorProps {
 export function TextEditor({editor}: TextEditorProps) {
 
   return (
-    <Container>
+    <TextEditorContainer>
       <EditorContent editor={editor}/>
-    </Container>
+    </TextEditorContainer>
   )
 }

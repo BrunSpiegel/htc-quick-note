@@ -1,7 +1,7 @@
 import { rem } from "polished";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const OptionsBarContainer = styled.div`
   display: flex;
   padding: 0.5rem;
 

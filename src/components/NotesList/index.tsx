@@ -1,22 +1,20 @@
-import { Note } from "../AddNote";
+import { INote } from "../../types/Global";
+import { Note } from "./Note";
+import { NotesListContainer, List } from "./styles";
 
 interface NotesListProps {
-  notes: Note[];
+  notes: INote[];
 }
 
 export function NotesList({ notes }: NotesListProps) {
   return (
-    <div>
-      <ul>
+    <NotesListContainer>
+      <List>
         {notes.map((note) => {
-          return (
-            <li>
-              <h4>{note.title}</h4>
-              <p>{note.text}</p>
-            </li>
-          );
+          return  <Note note={note} />;
+          ;
         })}
-      </ul>
-    </div>
+      </List>
+    </NotesListContainer>
   );
 }
