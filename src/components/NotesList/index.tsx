@@ -11,8 +11,7 @@ export function NotesList({ notes }: NotesListProps) {
     <NotesListContainer>
       <List>
         {notes.map((note) => {
-          return  <Note note={note} />;
-          ;
+          return <Note note={note} />;
         })}
       </List>
     </NotesListContainer>

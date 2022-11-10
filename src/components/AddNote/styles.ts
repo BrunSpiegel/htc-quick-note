@@ -27,23 +27,6 @@ export const Content = styled.div<ContentProps>`
   overflow: hidden;
 
   transition: max-height 0.2s;
-
-  form {
-    position: relative;
-    background-color: ${({ theme }) => theme.colors.background};
-    z-index: 1;
-  }
-
-  input {
-    height: ${rem(52)};
-    width: 100%;
-    border: transparent;
-    padding-inline: 1rem;
-
-    ::placeholder {
-      color: ${({ theme }) => theme.colors.grey500};
-    }
-  }
 `;
 
 interface BackdropProps {
@@ -65,13 +48,4 @@ export const Backdrop = styled.div<BackdropProps>`
   z-index: 1;
 `;
 
-export const SubmitButton = styled.button`
-  height: ${rem(36)};
-  padding-inline: 1rem;
-  font-size: ${rem(14)};
-  border-radius: 5px;
 
-  :hover:not(:active) {
-    background-color: ${({ theme }) => theme.colors.grey100};
-  }
-`;
