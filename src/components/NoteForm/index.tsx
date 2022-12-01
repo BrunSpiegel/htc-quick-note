@@ -5,18 +5,20 @@ import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { useState } from "react";
 import { api } from "../../services/api";
-import { RawNote } from "../../types/Global";
+import { INote, RawNote } from "../../types/Global";
+import { isTextJson } from "../../Utils/isTextjson";
 import { OptionsBar } from "../AddNote/OptionsBar";
 import { TextEditor } from "../TextEditor";
 import { Form, SubmitButton } from "./styles";
 
-
 interface NoteFormProps {
+  note?: INote;
+  resetOnSubmit?: boolean;
   onSubmit: (note: RawNote) => void;
 }
 
-export function NoteForm({ onSubmit }: NoteFormProps) {
-  const [title, setTitle] = useState("");
+export function NoteForm({ onSubmit, note, resetOnSubmit }: NoteFormProps) {
+  const [title, setTitle] = useState(note?.title ?? " ");
 
   const editor = useEditor({
     extensions: [
@@ -27,6 +29,11 @@ export function NoteForm({ onSubmit }: NoteFormProps) {
         placeholder: "Criar uma anotação ou lista",
       }),
     ],
+    content: note
+      ? isTextJson(note.text)
+        ? JSON.parse(note.text)
+        : note.text
+      : "",
   });
 
   const handleFileAddition = (file: File) => {
@@ -49,11 +56,13 @@ export function NoteForm({ onSubmit }: NoteFormProps) {
       text: editor ? JSON.stringify(editor.getJSON()) : "",
     };
 
-    onSubmit(note)
+    onSubmit(note);
 
-    setTitle("")
+    if(!resetOnSubmit) return
+
+    setTitle("");
     editor?.commands.setContent("");
-  }
+  };
 
   return (
     <Form onSubmit={handleSubmit}>

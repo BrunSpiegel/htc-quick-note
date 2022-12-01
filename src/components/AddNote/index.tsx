@@ -35,7 +35,7 @@ export function AddNote({ onAddNote }: AddNoteProps) {
     <AddNoteContainer>
       <Backdrop itsOpen={isAddNoteOpen} onClick={handleCloseAddNote} />
       <Content itsOpen={isAddNoteOpen} onClick={handleOpenAddNote}>
-        <NoteForm onSubmit={handleSubmit} />
+        <NoteForm onSubmit={handleSubmit} resetOnSubmit={true}/>
       </Content>
     </AddNoteContainer>
   );

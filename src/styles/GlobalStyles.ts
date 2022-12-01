@@ -17,11 +17,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;  
     font-size: 1rem;
-    color: ${({theme}) => theme.colors.grey800};
   }
-
+  
   body {
     font-family: "Barlow", sans-serif;
+    color: ${({theme}) => theme.colors.grey800};
   }
 
   button {
